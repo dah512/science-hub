@@ -13,7 +13,7 @@
 /* Layout: a lab notebook page. Graph-paper ground, subject tabs like notebook dividers, one conversation column. */
 :root{
   --paper:#f7f8f3; --grid:#dfe6ee; --sheet:#ffffff; --ink:#14233b; --ink-2:#44546b; --ink-3:#6a788c;
-  --pen:#1c3f74; --pen-soft:#e3ebf6; --mark:#ffd84d; --mark-ink:#3b3000; --line:#cfd8e3;
+  --pen:#1c3f74; --pen-ink:#ffffff; --pen-soft:#e3ebf6; --hl-top:58%; --mark:#ffd84d; --mark-ink:#3b3000; --line:#cfd8e3;
   --student:#1c3f74; --student-ink:#ffffff; --alert:#8f1d1d; --alert-bg:#fbe7e7;
   --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --body:"Atkinson Hyperlegible",ui-sans-serif,system-ui,sans-serif;
@@ -21,7 +21,7 @@
 }
 @media (prefers-color-scheme:dark){:root{
   --paper:#0f1520; --grid:#1a2330; --sheet:#151d2a; --ink:#e8eef6; --ink-2:#b0bccb; --ink-3:#8494a8;
-  --pen:#8fb4ea; --pen-soft:#1d2b40; --mark:#f2cc3d; --mark-ink:#241c00; --line:#2a3546;
+  --pen:#8fb4ea; --pen-ink:#0f1520; --pen-soft:#1d2b40; --hl-top:82%; --mark:#f2cc3d; --mark-ink:#241c00; --line:#2a3546;
   --student:#2d5596; --student-ink:#ffffff; --alert:#f3a3a3; --alert-bg:#3a1b1b; color-scheme:dark}}
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -36,7 +36,7 @@ header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-be
 .brand{display:flex;align-items:center;gap:12px}
 .brand svg{flex:none}
 h1{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1;margin:0;letter-spacing:-.02em}
-h1 em{font-style:normal;background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%);padding:0 .08em}
+h1 em{font-style:normal;background:linear-gradient(transparent var(--hl-top),var(--mark) var(--hl-top),var(--mark) 94%,transparent 94%);padding:0 .08em}
 .by{margin:4px 0 0;color:var(--ink-3);font-size:.9rem}
 .ai{font-size:.86rem;color:var(--ink-2);background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
 .sheet{background:var(--sheet);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 0 var(--line),0 10px 30px -18px rgba(20,35,59,.35)}
@@ -49,7 +49,7 @@ h1 em{font-style:normal;background:linear-gradient(transparent 58%,var(--mark) 5
 .seg{display:inline-flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden}
 .seg button{font:inherit;font-size:.92rem;border:0;background:var(--sheet);color:var(--ink-2);padding:8px 14px;min-height:44px;cursor:pointer}
 .seg button+button{border-left:1.5px solid var(--line)}
-.seg button[aria-pressed="true"]{background:var(--pen);color:#fff;font-weight:700}
+.seg button[aria-pressed="true"]{background:var(--pen);color:var(--pen-ink);font-weight:700}
 .hint{font-size:.85rem;color:var(--ink-3);margin:6px 0 0}
 button:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
 .chat{display:grid;grid-template-rows:auto 1fr auto;min-height:420px}
